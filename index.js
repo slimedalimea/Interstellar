@@ -167,6 +167,20 @@ server.on("upgrade", (req, socket, head) => {
   }
 });
 
+app.get("/delete-config", (req, res) => {
+    const filePath = path.join(__dirname, 'config.js');
+    fs.unlink(filePath, (err) => {
+        if (err) {
+            console.error('Failed to delete file:', err);
+            res.status(500).send('Failed to delete file.');
+        } else {
+            console.log('File deleted successfully');
+            res.send('File deleted successfully.');
+        }
+    });
+});
+
+
 server.on("listening", () => {
   console.log(chalk.green(`🌍 Server is running on http://localhost:${PORT}`));
 });
