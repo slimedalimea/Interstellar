@@ -1,3 +1,6 @@
+# made by some1 on earth
+#2024 5th september
+
 User-agent: *
 Disallow: /e/*
 Disallow: /assets/*
