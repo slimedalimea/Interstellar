@@ -7,9 +7,14 @@ const Fail = fs.readFileSync("Failed.html", "utf8");
 
 export function setupMasqr(app) {
   app.use(async (req, res, next) => {
+    // Normalize URL to avoid mismatches
+    const normalizedUrl = req.url.replace(/\/+$/, "") || "/";
+
+    console.log("Incoming request URL:", normalizedUrl);
 
     // Skip authentication for /, /index.html, and /ov/ routes
-    if (req.url === "/" || req.url === "/index.html" || req.url.includes("/ov/")) {
+    if (normalizedUrl === "/" || normalizedUrl === "/index.html" || normalizedUrl.startsWith("/ov/")) {
+      console.log("Bypassing authentication for:", normalizedUrl);
       next();
       return;
     }
@@ -74,7 +79,7 @@ async function MasqFail(req, res) {
     return;
   }
   const unsafeSuffix = req.headers.host + ".html";
-  const safeSuffix = path.normalize(unsafeSuffix).replace(/^(\\.\.(\/|\\|$))+/, "");
+  const safeSuffix = path.normalize(unsafeSuffix).replace(/^(\\.{2}(\\/|\\\\|$))+/g, "");
   const safeJoin = path.join(process.cwd() + "/Masqrd", safeSuffix);
 
   try {
