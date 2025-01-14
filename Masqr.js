@@ -7,11 +7,6 @@ const Fail = fs.readFileSync("Failed.html", "utf8");
 
 export function setupMasqr(app) {
   app.use(async (req, res, next) => {
-    // Skip authentication for index.html or /
-    if (req.url === "/" || req.url === "/index.html") {
-      next();
-      return;
-    }
 
     // Skip authentication for /ov/ routes
     if (req.url.includes("/ov/")) {
