@@ -1,5 +1,6 @@
-User-agent: *
-Disallow: /
+# made by some1 on earth
+#2024 5th september
 
-User-agent: Mediapartners-Google
-Allow: /
+User-agent: *
+Disallow: /e/*
+Disallow: /assets/*
