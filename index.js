@@ -130,7 +130,7 @@ const routes = [
   { path: "/ta", file: "tabs.html" },
   { path: "/ts", file: "tools.html" },
   { path: "/", file: "index.html" },
-  { path: "/maths", file: ""peak.html},
+  { path: "/maths", file: "peak.html"},
   { path: "/tos", file: "tos.html" },
   { path: "/privacy", file: "privacy.html" },
   { path: "/test", file: "test.html" }
