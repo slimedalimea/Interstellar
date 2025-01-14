@@ -10,9 +10,39 @@
     <link rel="stylesheet" href="/assets/css/global.css?v=6" />
     <link rel="stylesheet" href="/assets/css/home.css?v=2" />
     <link rel="stylesheet" href="/assets/css/nav.css?v=2" />
-
+    <style>
+      /* Styles for the announcement banner */
+      .announcement-banner {
+        background-color: #ffeeba;
+        color: #856404;
+        border: 1px solid #ffeeba;
+        padding: 15px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .announcement-banner h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+      .announcement-banner p {
+        margin: 5px 0 0;
+        font-size: 14px;
+      }
+      body {
+        margin-top: 70px; /* Offset body content for the banner */
+      }
+    </style>
   </head>
   <body class="center" onload="SplashT">
+    <div class="announcement-banner">
+      <h2>Caution!</h2>
+      <p>Use site with caution, we have discovered LGFL protect and Senso web scrapers attempting to access our website. We do not hold any data that may identify you.</p>
+    </div>
     <div class="fixed-nav-bar"></div>
     <div id="particles-js">
       <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/"></script>
