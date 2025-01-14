@@ -130,9 +130,9 @@ const routes = [
   { path: "/ta", file: "tabs.html" },
   { path: "/ts", file: "tools.html" },
   { path: "/", file: "index.html" },
-  { path: "/tos", file: "balls.html" },
+  { path: "/tos", file: "tos.html" },
   { path: "/privacy", file: "privacy.html" },
-  { path: "/balls", file: "balls.html" }
+  { path: "/test", file: "test.html" }
 ];
 
 // biome-ignore lint/complexity/noForEach:
