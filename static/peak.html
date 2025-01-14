@@ -30,8 +30,20 @@
         font-size: 18px;
       }
       .announcement-banner p {
-        margin: 5px 0 0;
+        margin: 5px 0 10px;
         font-size: 14px;
+      }
+      .dismiss-button {
+        background-color: #856404;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .dismiss-button:hover {
+        background-color: #684a03;
       }
       body {
         margin-top: 70px; /* Offset body content for the banner */
@@ -39,9 +51,10 @@
     </style>
   </head>
   <body class="center" onload="SplashT">
-    <div class="announcement-banner">
+    <div class="announcement-banner" id="announcement-banner">
       <h2>Caution!</h2>
       <p>Use site with caution, we have discovered LGFL protect and Senso web scrapers attempting to access our website. We do not hold any data that may identify you.</p>
+      <button class="dismiss-button" onclick="dismissBanner()">Dismiss</button>
     </div>
     <div class="fixed-nav-bar"></div>
     <div id="particles-js">
@@ -60,6 +73,14 @@
         </div>
       </div>
     </div>
+    <script>
+      // Function to dismiss the announcement banner
+      function dismissBanner() {
+        const banner = document.getElementById('announcement-banner');
+        banner.style.display = 'none';
+        document.body.style.marginTop = '0'; // Reset the body margin
+      }
+    </script>
     <script src="assets/js/index.js?v=46"></script>
     <script src="/assets/js/home.js?v=26"></script>
     <script src="./assets/-uv/bundle.js?v=6-17-2024"></script>
